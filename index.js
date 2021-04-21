@@ -4,7 +4,7 @@ const deleteKarakter = require('./cumle/deleteKarakter.js');
 const _  = require('lodash');
 const editCumle = require('./cumle/editCumle.js');
 const isCumle   = require('./cumle/isCumle.js');
-const arrCumle  = require('./cumle/arrCumle.js');
+const jsonCumle  = require('./cumle/jsonCumle.js');
 
 
 main = async (file) => {
@@ -36,8 +36,8 @@ main = async (file) => {
             cumleList.push(cumle.trim());
     }
 
-
-    console.log(cumleList);
+    const cumleJson = await jsonCumle.jsonCumle(cumleList);
+    console.log(cumleJson);
 
 
 }

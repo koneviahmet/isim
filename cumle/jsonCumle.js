@@ -8,3 +8,13 @@ dizide cümle bir defa geçecek.
 
 yukarıdaki diziden anlayacağım üzere selam ahmet cümlesi metinde 1 kere geçiyor.
 */
+
+module.exports.jsonCumle = jsonCumle = (arr) => {
+   
+
+
+
+
+    /* cümle düzenlemeller sonunda boşalırsa false olarak dönecek. */
+    return arr || false;
+}
