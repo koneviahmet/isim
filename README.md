@@ -1,2 +1,2 @@
 # isim
-doğal dil işleme için isimleri sınıflandırmak için nodejs ile yazıldı.
+Doğal dil işlede  isimleri tesbit etmek için nodejs ile yazıldı.
