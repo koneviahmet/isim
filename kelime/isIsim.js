@@ -5,11 +5,14 @@ module.exports.isIsim = isIsim = (isimArr, kelime) => {
     
     let lastKelime = false;
 
-    if(isimArr.find(item => item == kelime))
-        lastKelime = kelime;
+
+    let findIsim = isimArr.find(item => item.isim == kelime || item.ekler.find(itemx => itemx == kelime));
+   
+    if(findIsim)
+        lastKelime = findIsim.isim;
 
 
 
     /* kelime düzenlemeller sonunda boşalırsa false olarak dönecek. */
-    return lastKelime;
+    return lastKelime;  
 }

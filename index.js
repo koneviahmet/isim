@@ -1,7 +1,7 @@
 /* makaleyi içeri al */
-const afs  = require('./helper/afs.js');
+const afs       = require('./helper/afs.js');
 const deleteKarakter = require('./cumle/deleteKarakter.js');
-const _  = require('lodash');
+const _         = require('lodash');
 const editCumle = require('./cumle/editCumle.js');
 const isCumle   = require('./cumle/isCumle.js');
 
@@ -10,16 +10,15 @@ const isIsim            = require('./kelime/isIsim.js');
 const deleteKelime      = require('./kelime/deleteKelime.js');
 const returnIsim        = require('./kelime/returnIsim.js');
 
-
 main = async (file) => {
 
-    const silTXT    = await afs.readFile("./sozluk/sil.txt");    
-    const silTXTArr = silTXT.split("\n");
+    const silTXT        = await afs.readFile("./sozluk/sil.txt");    
+    const silTXTArr     = silTXT.split("\n");
 
-    const isimTXT     = await afs.readFile("./sozluk/isim.txt");    
-    const isimTXTArr  = isimTXT.split("\n");
+    const isimTXT       = await afs.readFile("./sozluk/isim.json");    
+    const isimTXTArr    = JSON.parse(isimTXT);
 
-
+    
     const safMakale          = await afs.readFile(file);
     let cumleList            = [];
     let secilenIsimList      = [];
@@ -65,7 +64,7 @@ main = async (file) => {
                 let isim = await isIsim.isIsim([...isimTXTArr],kelime);
                 
                 if(isim){
-                    secilenIsimList.push(kelime);
+                    secilenIsimList.push(isim);
                 }else{
                     /* seçilmeyen kelime daha önce eklenmiş tekrar eklemeyi engelleyelim */
                     if(!secilmeyenKelimeList.find(item => item == kelime))
