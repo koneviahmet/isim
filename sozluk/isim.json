@@ -2,6 +2,7 @@
     {
         "isim": "Gazete",
         "type": "cansiz",
+        "regex": "G?g?azete(ci|den)",
         "ekler":[]
     },
     {

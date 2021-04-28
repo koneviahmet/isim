@@ -19,6 +19,7 @@ main = async (file) => {
     const isimTXTArr    = JSON.parse(isimTXT);
 
     
+
     const safMakale          = await afs.readFile(file);
     let cumleList            = [];
     let secilenIsimList      = [];
