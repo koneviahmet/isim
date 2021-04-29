@@ -12,13 +12,12 @@ const returnIsim        = require('./kelime/returnIsim.js');
 
 main = async (file) => {
 
-    const silTXT        = await afs.readFile("./sozluk/sil.txt");    
-    const silTXTArr     = silTXT.split("\n");
+    const silTXT        = await afs.readFile("./sozluk/sil.json");    
+    const silTXTArr     = JSON.parse(silTXT);
 
     const isimTXT       = await afs.readFile("./sozluk/isim.json");    
     const isimTXTArr    = JSON.parse(isimTXT);
 
-    
 
     const safMakale          = await afs.readFile(file);
     let cumleList            = [];

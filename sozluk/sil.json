@@ -1,0 +1,9 @@
+[
+    {
+        "isim": "Bir",
+        "type": "cansiz",
+        "regex": "B?b?ir(den|ler|lar|inin)",
+        "ekler":[]
+    }
+]
+

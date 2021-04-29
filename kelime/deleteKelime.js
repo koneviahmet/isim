@@ -13,8 +13,19 @@ module.exports.deleteKelime = deleteKelime = (silArr,cumleArr) => {
         let ekleDurum = true;
 
 
+        let findSil = silArr.find(
+            /* isim içinde geçiyorsa */
+            item => item.isim == kelime 
+
+            /* ekler içinde geçiyorsa */
+            || item.ekler.find(ek => ek == kelime)
+
+            /* regex yapısına uyuyorsa */
+            || (item.regex && RegExp(item.regex, 'g').test(kelime))
+        );
+
         /* sil.txt içinde var mı kontrol edelim */
-        if(silArr.find(item => item == kelime))
+        if(findSil)
             ekleDurum = false;
         
 

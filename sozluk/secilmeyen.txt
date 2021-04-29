@@ -1,3 +1,5 @@
+Selam
+ben
 bir
 ahmedim
 herhangi
@@ -11,7 +13,6 @@ yazılara
 denir
 dergilerde
 yayımlanır
-Bir
 gerçeği
 açıklamak,
 konuda
@@ -56,7 +57,6 @@ Hakemlik
 süreçleri
 kör
 hakemlik
-birden
 fazla
 hakem
 ile
