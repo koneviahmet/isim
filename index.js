@@ -3,7 +3,7 @@ const afs       = require('./helper/afs.js');
 const deleteKarakter = require('./cumle/deleteKarakter.js');
 const _         = require('lodash');
 const editCumle = require('./cumle/editCumle.js');
-const isCumle   = require('./cumle/isCumle.js');
+const isCumle   = require('./cumle/isCumle.js'); 
 
 const editKelime        = require('./kelime/editKelime.js');
 const isIsim            = require('./kelime/isIsim.js');
@@ -44,42 +44,60 @@ main = async (file) => {
         if(cumle)
             cumle = await isCumle.isCumle(cumle.trim());
 
-        /* 
-        cümle tüm filitreleri geçti ise cümleyi listeye aktaralım 
-        doğrudan bir yerde kullanmıyoruz ama gerekirse ileride kullanırız.
-        */
-        if(cumle)
-            cumleList.push(cumle.trim());
-    
+
         /* buradan sonra cümleleri kelimelere ayırmaya başlayalım */
         if(cumle){
+            let info = {};
             let kelimeArr = await editKelime.editKelime(cumle);
             
+
+            let kalanKelimeArr;
+            let infoSilinenKelimeler = [];
             /* silinmesi gereken kelimeleri silelim */
-            if(kelimeArr)
-                kelimeArr = await deleteKelime.deleteKelime([...silTXTArr],kelimeArr);
-          
+            if(kelimeArr){
+                kalanKelimeArr = await deleteKelime.deleteKelime([...silTXTArr],kelimeArr);
+                infoSilinenKelimeler = _.difference(kelimeArr, kalanKelimeArr);
+            }
             
             /* kalanlar kelimemi değil mi ona bakacağız */
-            for await (kelime of kelimeArr){
+            let infoSecilenKelime    = [];
+            let infoSecilmeyenKelime = [];
+            for await (kelime of kalanKelimeArr){
                 let isim = await isIsim.isIsim([...isimTXTArr],kelime);
                 
                 if(isim){
                     secilenIsimList.push(isim);
+
+                    /* her cümleden seçilen kelimeleri bilgi amaçlı alıyoruz.*/
+                    infoSecilenKelime.push(kelime);
                 }else{
                     /* seçilmeyen kelime daha önce eklenmiş tekrar eklemeyi engelleyelim */
                     if(!secilmeyenKelimeList.find(item => item == kelime))
                         secilmeyenKelimeList.push(kelime);
+
+                        /* her cümleden seçilmeyen kelimeleri bilgi amaçlı alıyoruz.*/
+                        infoSecilmeyenKelime.push(kelime);
                 }
                     
             }
                 
 
+            /* 
+            cümle tüm filitreleri geçti ise cümleyi listeye aktaralım 
+            doğrudan bir yerde kullanmıyoruz ama gerekirse ileride kullanırız.
+            */
+            info.cumle          = cumle.trim();
+            info.kelimeler      = kelimeArr;
+            info.secilenler     = infoSecilenKelime;
+            info.silinenler     = infoSilinenKelimeler;
+            info.kalanlar       = infoSecilmeyenKelime;
+            
+            cumleList.push(info);
         }
 
     }
 
-    
+
 
     /* seçilen isimlere son halini vermek için returnIsim kullanalaım */
     let secilenIsimler = await returnIsim.returnIsim(secilenIsimList);
@@ -96,8 +114,11 @@ main = async (file) => {
 
     /* seçilmeyen kelimeleri ayıklamak için secilmeyen.txt ye ekleyelim */
     
-    let secilmeyenEkle = await afs.writeFile("./sozluk/secilmeyen.txt", secilmeyenKelimeList.join("\n"));
+    let secilmeyenEkle = await afs.writeFile("./sozluk/secilmeyen.json", JSON.stringify(secilmeyenKelimeList));
 
+
+    /* elde edilen cümleleri kontrol amaçlı secilenCumlere isimlli bir json dosyasına atayalım */
+    let addCumleTXT = await afs.writeFile("./sozluk/secilenCumler.json", [JSON.stringify(cumleList)]);
 
 }
 

@@ -1,0 +1,323 @@
+[
+    {
+        "cumle": "Selam ben bir ahmedim...",
+        "kelimeler": [
+            "Selam",
+            "ben",
+            "bir",
+            "ahmedim"
+        ],
+        "secilenler": [],
+        "silinenler": [
+            "Selam",
+            "ben",
+            "bir"
+        ],
+        "kalanlar": [
+            "ahmedim"
+        ]
+    },
+    {
+        "cumle": "Makale , herhangi bir konuda, bir görüşü, bir düşünceyi savunmak ve kanıtlamak için yazılan yazılara denir.",
+        "kelimeler": [
+            "Makale",
+            ",",
+            "herhangi",
+            "bir",
+            "konuda,",
+            "bir",
+            "görüşü,",
+            "bir",
+            "düşünceyi",
+            "savunmak",
+            "ve",
+            "kanıtlamak",
+            "için",
+            "yazılan",
+            "yazılara",
+            "denir"
+        ],
+        "secilenler": [
+            "Makale",
+            "düşünceyi"
+        ],
+        "silinenler": [
+            ",",
+            "bir",
+            "bir",
+            "bir",
+            "ve",
+            "denir"
+        ],
+        "kalanlar": [
+            "herhangi",
+            "konuda,",
+            "görüşü,",
+            "savunmak",
+            "kanıtlamak",
+            "için",
+            "yazılan",
+            "yazılara"
+        ]
+    },
+    {
+        "cumle": "Gazete ve dergilerde yayımlanır.",
+        "kelimeler": [
+            "Gazete",
+            "ve",
+            "dergilerde",
+            "yayımlanır"
+        ],
+        "secilenler": [
+            "Gazete"
+        ],
+        "silinenler": [
+            "ve"
+        ],
+        "kalanlar": [
+            "dergilerde",
+            "yayımlanır"
+        ]
+    },
+    {
+        "cumle": "Bir gerçeği açıklamak, bir konuda görüş ve düşünceler öne sürmek ya da bir tezi savunmak, desteklemek için yazılan yazılara da \"makale\" denir.",
+        "kelimeler": [
+            "Bir",
+            "gerçeği",
+            "açıklamak,",
+            "bir",
+            "konuda",
+            "görüş",
+            "ve",
+            "düşünceler",
+            "öne",
+            "sürmek",
+            "ya",
+            "da",
+            "bir",
+            "tezi",
+            "savunmak,",
+            "desteklemek",
+            "için",
+            "yazılan",
+            "yazılara",
+            "da",
+            "\"makale\"",
+            "denir"
+        ],
+        "secilenler": [],
+        "silinenler": [
+            "Bir",
+            "bir",
+            "ve",
+            "ya",
+            "da",
+            "bir",
+            "da",
+            "denir"
+        ],
+        "kalanlar": [
+            "gerçeği",
+            "açıklamak,",
+            "konuda",
+            "görüş",
+            "düşünceler",
+            "öne",
+            "sürmek",
+            "tezi",
+            "savunmak,",
+            "desteklemek",
+            "için",
+            "yazılan",
+            "yazılara",
+            "\"makale\""
+        ]
+    },
+    {
+        "cumle": "Makaleler bir gerçeği kanıtlamak için yazılır.",
+        "kelimeler": [
+            "Makaleler",
+            "bir",
+            "gerçeği",
+            "kanıtlamak",
+            "için",
+            "yazılır"
+        ],
+        "secilenler": [],
+        "silinenler": [
+            "bir"
+        ],
+        "kalanlar": [
+            "Makaleler",
+            "gerçeği",
+            "kanıtlamak",
+            "için",
+            "yazılır"
+        ]
+    },
+    {
+        "cumle": "Makalelerde bilimsel verilerden yararlanılır.",
+        "kelimeler": [
+            "Makalelerde",
+            "bilimsel",
+            "verilerden",
+            "yararlanılır"
+        ],
+        "secilenler": [],
+        "silinenler": [
+            "verilerden"
+        ],
+        "kalanlar": [
+            "Makalelerde",
+            "bilimsel",
+            "yararlanılır"
+        ]
+    },
+    {
+        "cumle": "[999] Akademik makaleler ise aynı gazetenin deneme düşünce düşüncede Gazeteci zamanda Gazeteden gazeteden   bilimsel ve akademik boyuttaki dergilerde, bilimsel çalışmaların sonuçlarını içeren yazılar biçiminde de oluşturulabilmektedir.",
+        "kelimeler": [
+            "[999]",
+            "Akademik",
+            "makaleler",
+            "ise",
+            "aynı",
+            "gazetenin",
+            "deneme",
+            "düşünce",
+            "düşüncede",
+            "Gazeteci",
+            "zamanda",
+            "Gazeteden",
+            "gazeteden",
+            "bilimsel",
+            "ve",
+            "akademik",
+            "boyuttaki",
+            "dergilerde,",
+            "bilimsel",
+            "çalışmaların",
+            "sonuçlarını",
+            "içeren",
+            "yazılar",
+            "biçiminde",
+            "de",
+            "oluşturulabilmektedir"
+        ],
+        "secilenler": [
+            "düşünce",
+            "düşüncede",
+            "Gazeteci"
+        ],
+        "silinenler": [
+            "gazetenin",
+            "deneme",
+            "Gazeteden",
+            "gazeteden",
+            "ve",
+            "içeren",
+            "de",
+            "oluşturulabilmektedir"
+        ],
+        "kalanlar": [
+            "[999]",
+            "Akademik",
+            "makaleler",
+            "ise",
+            "aynı",
+            "zamanda",
+            "bilimsel",
+            "akademik",
+            "boyuttaki",
+            "dergilerde,",
+            "bilimsel",
+            "çalışmaların",
+            "sonuçlarını",
+            "yazılar",
+            "biçiminde"
+        ]
+    },
+    {
+        "cumle": "Bu konudaki dergiler ücretli ya da ücretsiz ve ulusal ya da uluslararası olabilmektedir.",
+        "kelimeler": [
+            "Bu",
+            "konudaki",
+            "dergiler",
+            "ücretli",
+            "ya",
+            "da",
+            "ücretsiz",
+            "ve",
+            "ulusal",
+            "ya",
+            "da",
+            "uluslararası",
+            "olabilmektedir"
+        ],
+        "secilenler": [],
+        "silinenler": [
+            "Bu",
+            "ya",
+            "da",
+            "ve",
+            "ya",
+            "da",
+            "olabilmektedir"
+        ],
+        "kalanlar": [
+            "konudaki",
+            "dergiler",
+            "ücretli",
+            "ücretsiz",
+            "ulusal",
+            "uluslararası"
+        ]
+    },
+    {
+        "cumle": "Hakemlik süreçleri kör hakemlik biçiminde birden fazla hakem ile yürütülebilmektedir.",
+        "kelimeler": [
+            "Hakemlik",
+            "süreçleri",
+            "kör",
+            "hakemlik",
+            "biçiminde",
+            "birden",
+            "fazla",
+            "hakem",
+            "ile",
+            "yürütülebilmektedir"
+        ],
+        "secilenler": [],
+        "silinenler": [
+            "birden",
+            "yürütülebilmektedir"
+        ],
+        "kalanlar": [
+            "Hakemlik",
+            "süreçleri",
+            "kör",
+            "hakemlik",
+            "biçiminde",
+            "fazla",
+            "hakem",
+            "ile"
+        ]
+    },
+    {
+        "cumle": "Selam ben bir ahmedim...",
+        "kelimeler": [
+            "Selam",
+            "ben",
+            "bir",
+            "ahmedim"
+        ],
+        "secilenler": [],
+        "silinenler": [
+            "Selam",
+            "ben",
+            "bir"
+        ],
+        "kalanlar": [
+            "ahmedim"
+        ]
+    }
+]

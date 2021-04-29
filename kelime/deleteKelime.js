@@ -14,8 +14,8 @@ module.exports.deleteKelime = deleteKelime = (silArr,cumleArr) => {
 
 
         let findSil = silArr.find(
-            /* isim içinde geçiyorsa */
-            item => item.isim == kelime 
+            /* kelime içinde geçiyorsa */
+            item => item.kelime == kelime 
 
             /* ekler içinde geçiyorsa */
             || item.ekler.find(ek => ek == kelime)

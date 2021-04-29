@@ -1,8 +1,17 @@
 [
     {
-        "isim": "Bir",
-        "type": "cansiz",
-        "regex": "B?b?ir(den|ler|lar|inin)",
+        "kelime": "Bir",
+        "regex": "B?b?ir(den|ler|lar|inin)?",
+        "ekler":[]
+    },
+    {
+        "kelime": "Selam",
+        "regex": "S?s?elam",
+        "ekler":[]
+    },
+    {
+        "kelime": "Ben",
+        "regex": "B?b?en(im|den|imle)?",
         "ekler":[]
     }
 ]
