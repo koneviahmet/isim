@@ -13,7 +13,7 @@ module.exports.deleteKelime = deleteKelime = (silArr,cumleArr) => {
         let ekleDurum = true;
 
 
-        /* sağını solunu boşaltınca boş dönüyorsa ekleme*/
+        /* sil.txt içinde var mı kontrol edelim */
         if(silArr.find(item => item == kelime))
             ekleDurum = false;
         

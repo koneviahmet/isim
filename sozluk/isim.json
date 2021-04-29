@@ -2,7 +2,13 @@
     {
         "isim": "Gazete",
         "type": "cansiz",
-        "regex": "G?g?azete(ci|den)",
+        "regex": "G?g?azete(den|ler|lar|nin)",
+        "ekler":[]
+    },
+    {
+        "isim": "Gazeteci",
+        "type": "cansiz",
+        "regex": "G?g?azeteci(den|ler|lar|nin)",
         "ekler":[]
     },
     {

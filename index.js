@@ -32,7 +32,8 @@ main = async (file) => {
     /* . kulllanarak diziye bölüyorum */
     const cumleArr = makale.split(".");
     for await (cumle of cumleArr) {
-       
+        
+
         /* cümlede karakter temizlemesi yapalım */
         cumle = await deleteKarakter.deleteKarakter(cumle.trim());
         
