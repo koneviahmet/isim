@@ -94,6 +94,11 @@ main = async (file) => {
     //console.log("seçilen Kelimlere adet", secilenIsimList.length);
     //console.log("seçilmeyen Kelimlere adet", secilmeyenKelimeList.length);
 
+    /* seçilmeyen kelimeleri ayıklamak için secilmeyen.txt ye ekleyelim */
+    
+    let secilmeyenEkle = await afs.writeFile("./sozluk/secilmeyen.txt", secilmeyenKelimeList.join("\n"));
+
+
 }
 
 main("makale");

@@ -16,6 +16,11 @@ module.exports.deleteKelime = deleteKelime = (silArr,cumleArr) => {
         /* sağını solunu boşaltınca boş dönüyorsa ekleme*/
         if(silArr.find(item => item == kelime))
             ekleDurum = false;
+        
+
+        /* kelimenin boyutu eğer 3 ten küçükse sil gitsin.*/
+        if(kelime.length < 3)
+            ekleDurum = false;
 
 
         if(ekleDurum)

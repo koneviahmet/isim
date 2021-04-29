@@ -22,7 +22,11 @@ module.exports.isIsim = isIsim = (isimArr, kelime) => {
    
 
     if(findIsim)
-        lastKelime = findIsim.isim;
+        /* hangi kelimeleri yakaladı ona bakmak için kelimeyi basalım ancak daha sonra kelimenin ait olduğu ismi basacağız. */
+        lastKelime = kelime;
+
+        /* son durumda bu aktif olacak */
+        //lastKelime = findIsim.isim;
 
 
 

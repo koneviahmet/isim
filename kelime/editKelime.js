@@ -10,8 +10,9 @@ module.exports.editKelime = editKelime = (cumle) => {
 
     const cumleArr = cumle.split(" ");
 
-    
+    let i = 0;    
     for (kelime of cumleArr) {
+        i++;
         /* burada temizleme işlemlerini yapalım */
         let ekleDurum = true;
 
@@ -21,8 +22,16 @@ module.exports.editKelime = editKelime = (cumle) => {
             ekleDurum = false;
 
 
+        /* son kelime ise sonunda bulunan . yı veya . ları silelim*/
+        if(i == cumleArr.length){
+            /* son kelimeye yapılacakları burada yapabiliriz.*/
+            kelime = kelime.replace(RegExp(/\./, 'g'), "");
+        }
+
+        /* her şey yolunda ise ekle gitsin. */
         if(ekleDurum)
             selectKelimeList.push(kelime.trim())
+  
     }
 
     /* kelime düzenlemeller sonunda boşalırsa false olarak dönecek. */
