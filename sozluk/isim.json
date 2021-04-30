@@ -1,18 +1,18 @@
 [
     {
-        "isim": "Gazete",
+        "isim": "gazete",
         "type": "cansiz",
         "regex": "G?g?azete(den|ler|lar|nin)",
         "ekler":[]
     },
     {
-        "isim": "Gazeteci",
+        "isim": "gazeteci",
         "type": "cansiz",
         "regex": "G?g?azeteci(den|ler|lar|nin)",
         "ekler":[]
     },
     {
-        "isim": "Makale",
+        "isim": "makale",
         "type": "cansiz",
         "ekler":[]
     },
