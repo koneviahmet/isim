@@ -71,12 +71,14 @@ main = async (file) => {
                     /* her cümleden seçilen kelimeleri bilgi amaçlı alıyoruz.*/
                     infoSecilenKelime.push(kelime);
                 }else{
+                    /* her cümleden seçilmeyen kelimeleri bilgi amaçlı alıyoruz.*/
+                    infoSecilmeyenKelime.push(kelime);
+
                     /* seçilmeyen kelime daha önce eklenmiş tekrar eklemeyi engelleyelim */
                     if(!secilmeyenKelimeList.find(item => item == kelime))
                         secilmeyenKelimeList.push(kelime);
 
-                        /* her cümleden seçilmeyen kelimeleri bilgi amaçlı alıyoruz.*/
-                        infoSecilmeyenKelime.push(kelime);
+                        
                 }
                     
             }
