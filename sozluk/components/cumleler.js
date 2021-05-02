@@ -1,8 +1,22 @@
-import {List,Label} from 'semantic-ui-react'
+import {List,Label, Icon} from 'semantic-ui-react'
 import PopupHelper from '../helper/popupHelper'
 import styles from '../styles/Home.module.css'
 
-const Cumleler = ({item, setSecilenKelime}) => {
+const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
+
+
+   
+    /* yeni eklediğimiz isim veye silinen kelimeye uyanları denetleyelim */
+    let isFind = (arr, kelime) =>{
+      let find = arr.find(
+        item => item.kelime == kelime 
+        || (item.regex && RegExp(item.regex, 'g').test(kelime))
+        );
+      return find && true || false;
+    } 
+
+
+
     return (
         <List.Item style={{padding: '10px'}}>
         <List.Content floated='left'>
@@ -15,7 +29,7 @@ const Cumleler = ({item, setSecilenKelime}) => {
             </PopupHelper>
 
             {item.secilenler.map((s, k) => 
-              <Label style={{marginTop: '4px'}} key={k} size='mini'>{s}</Label>
+              <Label style={{marginTop: '4px', opacity: .8}} key={k} size='mini'>{s}</Label>
             )}
           </div>}
 
@@ -26,7 +40,7 @@ const Cumleler = ({item, setSecilenKelime}) => {
             </PopupHelper>
             
             {item.silinenler.map((s, k) => 
-              <Label style={{marginTop: '4px'}} key={k} size='mini'>{s}</Label>
+              <Label style={{marginTop: '4px', opacity: .8}} key={k} size='mini'>{s}</Label>
             )}
           </div>}
 
@@ -36,7 +50,9 @@ const Cumleler = ({item, setSecilenKelime}) => {
             </PopupHelper>
 
             {item.kalanlar.map((s, k) => 
-              <Label style={{marginTop: '4px', cursor: 'pointer'}} key={k} onClick={() => setSecilenKelime(s.toLowerCase())} size='mini'>{s}</Label>
+              <Label color={isFind(lastIsim,s) && "green" || 'grey'} style={{marginTop: '4px', cursor: 'pointer', opacity: (isFind(newIsim,s) || isFind(newSil,s)) && 0.5 || 1}} key={k} onClick={() => setSecilenKelime(s.toLowerCase())}>
+                {s}
+              </Label>
             )}
           </div>}
 
@@ -47,7 +63,7 @@ const Cumleler = ({item, setSecilenKelime}) => {
             </PopupHelper>
 
             {item.kelimeler.map((s, k) => 
-              <Label style={{marginTop: '4px'}} key={k} size='mini'>{s}</Label>
+              <Label style={{marginTop: '4px', opacity: .8}} key={k} size='mini'>{s}</Label>
             )}
           </div>}
 

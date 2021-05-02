@@ -2,30 +2,20 @@ import {useState, useEffect} from 'react'
 import { Container, Grid, List, Button, Label, Form, Dropdown} from 'semantic-ui-react'
 
 
-const AddForm = ({kaydetBTN, secilenKelime, setSecilenKelime, regex, setRegex}) => {
-    const [action, setAction]   = useState("ekle");
-    const [type, setType]       = useState("canli");
-
-  
-   
-
-    const setRegexFnc = (kelime) => {
-        //kelimenin durumuna göre regex oluşturalım burada
-        kelime = kelime.toLowerCase();
-        let newRegex = kelime;
-
-        return newRegex;
-    }
+const AddForm = ({kaydetBTN, secilenKelime, setSecilenKelime, regex, setRegex, action, setAction, type, setType}) => {
+    
+    
 
     const typeArr = [
-        { key: 'canli', text: 'Canlı', value: 'canli' },
-        { key: 'cansiz', text: 'Cansiz', value: 'cansiz' },
+      { key: 'canli', text: 'Canlı', value: 'canli' },
+      { key: 'cansiz', text: 'Cansiz', value: 'cansiz' },
     ]
     
     const actionArr = [
         { key: 'ekle', text: 'Ekle', value: 'ekle' },
         { key: 'sil', text: 'Sil', value: 'sil' },
     ]
+
 
     return (
         <div style={{padding: '20px', background: '#f1f1f1', borderRadius: '5px', margin: '6px'}}> 
