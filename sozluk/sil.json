@@ -2,17 +2,20 @@
     {
         "kelime": "Bir",
         "regex": "B?b?ir(den|ler|lar|inin)?",
-        "ekler":[]
+        "ekler":[],
+        "istisna":[]
     },
     {
         "kelime": "Selam",
         "regex": "S?s?elam",
-        "ekler":[]
+        "ekler":[],
+        "istisna":[]
     },
     {
         "kelime": "Ben",
         "regex": "B?b?en(im|den|imle)?",
-        "ekler":[]
+        "ekler":[],
+        "istisna":[]
     }
 ]
 

@@ -1,25 +1,30 @@
 [
     {
-        "isim": "gazete",
+        "kelime": "gazete",
         "type": "cansiz",
         "regex": "G?g?azete(den|ler|lar|nin)",
-        "ekler":[]
+        "ekler":[],
+        "istisna":[]
     },
     {
-        "isim": "gazeteci",
+        "kelime": "gazeteci",
         "type": "cansiz",
         "regex": "G?g?azeteci(den|ler|lar|nin)",
-        "ekler":[]
+        "ekler":[],
+        "istisna":[]
+        
     },
     {
         "isim": "makale",
         "type": "cansiz",
-        "ekler":[]
+        "ekler":[],
+        "istisna":[]
     },
     {
-        "isim": "düşünce",
+        "kelime": "düşünce",
         "type": "cansiz",
-        "ekler":["düşünceyi", "düşüncede"]
+        "ekler":["düşünceyi", "düşüncede"],
+        "istisna":[]
     }
 ]
 

@@ -11,13 +11,18 @@ module.exports.isIsim = isIsim = (isimArr, kelime) => {
 
     let findIsim = isimArr.find(
             /* isim içinde geçiyorsa */
-            item => item.isim == kelime 
+            item => item.kelime == kelime 
 
             /* ekler içinde geçiyorsa */
             || item.ekler.find(ek => ek == kelime)
+            
 
             /* regex yapısına uyuyorsa */
-            || (item.regex && RegExp(item.regex, 'g').test(kelime))
+            || 
+            (
+                (item.regex && RegExp(item.regex, 'g').test(kelime)) 
+                && !item.istisna.find(ek => ek == kelime)
+            )
         );
    
 
@@ -26,7 +31,7 @@ module.exports.isIsim = isIsim = (isimArr, kelime) => {
         //lastKelime = kelime;
 
         /* son durumda bu aktif olacak */
-        lastKelime = findIsim.isim;
+        lastKelime = findIsim.kelime;
 
 
 

@@ -21,7 +21,11 @@ module.exports.deleteKelime = deleteKelime = (silArr,cumleArr) => {
             || item.ekler.find(ek => ek == kelime)
 
             /* regex yapısına uyuyorsa */
-            || (item.regex && RegExp(item.regex, 'g').test(kelime))
+            || 
+            (
+                (item.regex && RegExp(item.regex, 'g').test(kelime))
+                && !item.istisna.find(ek => ek == kelime)
+            )
         );
 
         /* sil.txt içinde var mı kontrol edelim */
