@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { Container, Grid, List, Button, Label, Form, Dropdown} from 'semantic-ui-react'
 
 
-const AddForm = ({kaydetBTN, secilenKelime, setSecilenKelime, regex, setRegex, action, setAction, type, setType}) => {
+const AddForm = ({kaydetBTN, secilenKelime, setSecilenKelime, regex, setRegex, action, setAction, type, setType, ekler, setEkler, istisna, setIstisna}) => {
     
     
 
@@ -39,6 +39,17 @@ const AddForm = ({kaydetBTN, secilenKelime, setSecilenKelime, regex, setRegex, a
             <Form.Field>
               <label>Type</label>
               <Dropdown placeholder={type} defaultValue={type} fluid  selection options={typeArr} onChange={(e,value) => setType(value.value)}/>
+            </Form.Field>
+
+            <Form.Field>
+              <label>Ekler</label>
+              <input placeholder='ekler...' value={ekler} onChange={(e) => setEkler(e.target.value)}/>
+            </Form.Field>
+
+
+            <Form.Field>
+              <label>İstisnalar</label>
+              <input placeholder='istisnalar...' value={istisna} onChange={(e) => setIstisna(e.target.value)}/>
             </Form.Field>
 
             <Form.Field>

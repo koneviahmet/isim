@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {useState, useEffect} from 'react'
 import styles from '../styles/Home.module.css'
-import { Container, Grid, List, Button, Label, Form, Dropdown} from 'semantic-ui-react'
+import { Container, Grid, List, Button, Label, Form, Dropdown, Sticky} from 'semantic-ui-react'
 import secilenCumler from '../secilenCumler.json'
 import Cumleler from '../components/cumleler'
 import AddForm from '../components/addForm'
@@ -11,25 +11,22 @@ export default function Home() {
   const [secilenKelime, setSecilenKelime] = useState("");
   const [regex, setRegex]                 = useState("regex");
   const [lastIsim, setLastIsim]           = useState({});
-  const [newIsim, setNewIsim] = useState([
-    {
-        "kelime": "hakem",
-        "type": "canli",
-        "regex": "(H|h)?akem(ler|lar|lik)?(den|nin)?",
-        "ekler": []
-    }
-  ]);
+  const [newIsim, setNewIsim]             = useState([]);
+  const [newSil, setNewSil]               = useState([]);
+  const [ekler, setEkler]                 = useState("")
+  const [action, setAction]               = useState("ekle");
+  const [istisna, setIstisna]             = useState("");
+  const [type, setType]                   = useState("canli");
 
-  const [newSil, setNewSil]   = useState([]);
-  const [action, setAction]   = useState("ekle");
-  const [type, setType]       = useState("canli");
 
   const addNewKelime = (isim, type, regex) => {
-    let newIsimAdd      = {}
-    newIsimAdd.kelime   = isim;
-    newIsimAdd.type     = type;
-    newIsimAdd.regex    = regex;
-    newIsimAdd.ekler    = [];
+    let newIsimAdd           = {}
+    newIsimAdd.kelime        = isim;
+    newIsimAdd.type          = type;
+    newIsimAdd.regex         = regex;
+    newIsimAdd.ekler         = ekler.split(",") || [];
+    newIsimAdd.istisna       = istisna.split(",") || [];
+
 
     if(action == "ekle"){
       setNewIsim([...newIsim, newIsimAdd]);
@@ -37,8 +34,10 @@ export default function Home() {
       setNewSil([...newIsim, newIsimAdd]);
     }
 
+
     setLastIsim(newIsimAdd);
   }
+  
 
 
   const setSecilenKelimeFNC = (kelime) => {
@@ -91,14 +90,14 @@ export default function Home() {
       newLastIsimAdd.kelime   = kelime;
       newLastIsimAdd.type     = type;
       newLastIsimAdd.regex    = regex;
-      newLastIsimAdd.ekler    = [];
+      newLastIsimAdd.ekler    = ekler.split(",") || [];
+      newLastIsimAdd.istisna  = istisna.split(",") || [];
 
       if(secilenKelime.length > 2){
         setLastIsim(newLastIsimAdd);
       }else{
         setLastIsim({});
       }
-
   }
 
 
@@ -126,8 +125,9 @@ export default function Home() {
             </Grid.Column>
 
             <Grid.Column computer="6" mobile="16">
-              <div>
-  
+         
+              <div style={{position: "fixed", minWidth: 400, top: 0, right: 0}}>
+                  
                 <AddForm kaydetBTN={kaydetBTN} 
                   kelime={secilenKelime} 
                   secilenKelime={secilenKelime} 
@@ -138,10 +138,13 @@ export default function Home() {
                   setAction={setActionFNC}
                   type={type}
                   setType={setType}
+                  ekler={ekler}
+                  setEkler={setEkler}
+                  istisna={istisna}
+                  setIstisna={setIstisna}
                   />
-
-
               </div>
+          
             </Grid.Column>
 
           </Grid.Row>
