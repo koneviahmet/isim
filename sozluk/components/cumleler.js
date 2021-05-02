@@ -5,7 +5,6 @@ import styles from '../styles/Home.module.css'
 const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
 
 
-   
     /* yeni eklediğimiz isim veye silinen kelimeye uyanları denetleyelim */
     let isFind = (arr, kelime) =>{
       let find = arr.find(
@@ -14,8 +13,6 @@ const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
         );
       return find && true || false;
     } 
-
-
 
     return (
         <List.Item style={{padding: '10px'}}>
