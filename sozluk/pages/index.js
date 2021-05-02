@@ -9,6 +9,7 @@ import AddForm from '../components/addForm'
 
 export default function Home() {
   const [secilenKelime, setSecilenKelime] = useState("");
+  const [regex, setRegex]     = useState("regex");
   const [newIsim, setNewIsim] = useState([]);
 
 
@@ -53,7 +54,9 @@ export default function Home() {
                 <AddForm kaydetBTN={kaydetBTN} 
                   kelime={secilenKelime} 
                   secilenKelime={secilenKelime} 
-                  setSecilenKelime={setSecilenKelime}/>
+                  setSecilenKelime={setSecilenKelime}
+                  regex={regex}
+                  setRegex={setRegex}/>
 
 
 
