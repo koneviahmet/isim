@@ -63,7 +63,7 @@ export default function Home() {
       kelime = kelime.toLowerCase();
       let kelimeArr = [...kelime];
 
-      let newRegex = "/(" + kelimeArr[0].toUpperCase() + "|";
+      let newRegex = "^(" + kelimeArr[0].toUpperCase() + "|";
       newRegex += kelimeArr[0].toLowerCase() + ")?";
       /* ekleme anındaki regex */
       if(newAction == "ekle"){
@@ -76,7 +76,7 @@ export default function Home() {
         newRegex += kelime;
       }
 
-      newRegex += "/"
+      newRegex += "$"
       lastIsimFNC(kelime, type, newRegex);
 
       return newRegex;
@@ -119,6 +119,7 @@ export default function Home() {
             <Grid.Column computer="10" mobile="16">
               <List  divided verticalAlign='middle'>
                 {secilenCumler.map((item, key) => 
+    
                   <Cumleler key={key} item={item} setSecilenKelime={setSecilenKelimeFNC} newIsim={newIsim} newSil={newSil} lastIsim={[lastIsim]}/>
                 )}
               </List>

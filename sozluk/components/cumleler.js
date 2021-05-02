@@ -7,10 +7,18 @@ const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
 
     /* yeni eklediğimiz isim veye silinen kelimeye uyanları denetleyelim */
     let isFind = (arr, kelime) =>{
-      let find = arr.find(
-        item => item.kelime == kelime 
-        || (item.regex && RegExp(item.regex, 'g').test(kelime))
+      let find = false;
+      
+      try {
+        find = arr.find(
+          item => item.kelime == kelime 
+          || (item.regex && RegExp(item.regex, 'g').test(kelime))
         );
+      } catch (error) {
+        console.log("regex Hata");
+      }
+       
+
       return find && true || false;
     } 
 
