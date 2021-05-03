@@ -26,7 +26,9 @@ const AddForm = ({addNewKelimeParent, denetle, kelime}) => {
       newIsimAdd.regex         = regex;
       newIsimAdd.ekler         = ekler.split(",") || [];
       newIsimAdd.istisna       = istisna.split(",") || [];
-          
+      
+
+
       addNewKelimeParent(newIsimAdd, action);
       setLastIsim(newIsimAdd);
     }
@@ -92,10 +94,12 @@ const AddForm = ({addNewKelimeParent, denetle, kelime}) => {
     } 
 
     const kaydetBTN = () => {
+
       setSecilenKelime("");
       setRegex("");
       setEkler("");
       setIstisna("");
+      
       addNewKelime(secilenKelime, type, regex);
     }
 
