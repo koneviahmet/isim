@@ -55,7 +55,13 @@ const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
             </PopupHelper>
 
             {item.kalanlar.map((s, k) => 
-              <Label color={isFind(lastIsim,s) && "green" || 'grey'} style={{marginTop: '4px', cursor: 'pointer', opacity: (isFind(newIsim,s) || isFind(newSil,s)) && 0.5 || 1}} key={k} onClick={() => setSecilenKelime(s.toLowerCase())}>
+              <Label 
+                color={isFind(lastIsim,s) && "green" || 'grey'} 
+                style={{marginTop: '4px', cursor: 'pointer', opacity: (isFind(newIsim,s) || isFind(newSil,s)) && 0.5 || 1}} 
+                key={k} 
+                onClick={() => setSecilenKelime(s.toLowerCase())}
+              >
+              
                 {s}
               </Label>
             )}

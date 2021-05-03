@@ -9,100 +9,24 @@ import AddForm from '../components/addForm'
 
 export default function Home() {
   const [secilenKelime, setSecilenKelime] = useState("");
-  const [regex, setRegex]                 = useState("regex");
   const [lastIsim, setLastIsim]           = useState({});
   const [newIsim, setNewIsim]             = useState([]);
   const [newSil, setNewSil]               = useState([]);
-  const [ekler, setEkler]                 = useState("")
-  const [action, setAction]               = useState("ekle");
-  const [istisna, setIstisna]             = useState("");
-  const [type, setType]                   = useState("canli");
+ 
 
-
-  const addNewKelime = (isim, type, regex) => {
-    let newIsimAdd           = {}
-    newIsimAdd.kelime        = isim;
-    newIsimAdd.type          = type;
-    newIsimAdd.regex         = regex;
-    newIsimAdd.ekler         = ekler.split(",") || [];
-    newIsimAdd.istisna       = istisna.split(",") || [];
-
+  const addNewKelime = (arr, action) => {
 
     if(action == "ekle"){
-      setNewIsim([...newIsim, newIsimAdd]);
+      setNewIsim([...newIsim, arr]);
     }else if(action == "sil"){
-      setNewSil([...newIsim, newIsimAdd]);
+      setNewSil([...newIsim, arr]);
     }
 
-
-    setLastIsim(newIsimAdd);
-  }
-  
-
-
-  const setSecilenKelimeFNC = (kelime) => {
-    setSecilenKelime(kelime);
-    kelime && setRegex(setRegexFnc(kelime, action))
-  } 
-
-  const setActionFNC = (actionx) => {
-    setAction(actionx);
-    setSecilenKelime(secilenKelime);
-    secilenKelime && setRegex(setRegexFnc(secilenKelime, actionx));
-  } 
-
-  const setRegexFNCX = (regex) => {
-    setRegex(regex);
-    lastIsimFNC(secilenKelime, type, regex);
-  } 
-  
-
-  
-  const setRegexFnc = (kelime, newAction) => {
-      //kelimenin durumuna göre regex oluşturalım burada
-      kelime = kelime.toLowerCase();
-      let kelimeArr = [...kelime];
-
-      let newRegex = "^(" + kelimeArr[0].toUpperCase() + "|";
-      newRegex += kelimeArr[0].toLowerCase() + ")?";
-      /* ekleme anındaki regex */
-      if(newAction == "ekle"){
-        delete kelimeArr[0];
-        newRegex += kelimeArr.join("");
-        newRegex += "(ler|lar)?(den|nin)?";
-
-      /* silme durumundaki regex */
-      }else if(newAction == "sil"){
-        newRegex += kelime;
-      }
-
-      newRegex += "$"
-      lastIsimFNC(kelime, type, newRegex);
-
-      return newRegex;
+    setLastIsim({});
   }
 
-
-  /* son seçilen kelime il seçilenleri yeşil yapalım */
-  const lastIsimFNC = (kelime, type, regex) => {
-      /* burada lastIsimi de değiştirelim */
-      let newLastIsimAdd      = {}
-      newLastIsimAdd.kelime   = kelime;
-      newLastIsimAdd.type     = type;
-      newLastIsimAdd.regex    = regex;
-      newLastIsimAdd.ekler    = ekler.split(",") || [];
-      newLastIsimAdd.istisna  = istisna.split(",") || [];
-
-      if(secilenKelime.length > 2){
-        setLastIsim(newLastIsimAdd);
-      }else{
-        setLastIsim({});
-      }
-  }
-
-
-  const kaydetBTN = () => {
-    addNewKelime(secilenKelime, type, regex);
+  const denetle = (arr) => {
+    setLastIsim(arr)
   }
 
   return (
@@ -120,7 +44,14 @@ export default function Home() {
               <List  divided verticalAlign='middle'>
                 {secilenCumler.map((item, key) => 
     
-                  <Cumleler key={key} item={item} setSecilenKelime={setSecilenKelimeFNC} newIsim={newIsim} newSil={newSil} lastIsim={[lastIsim]}/>
+                  <Cumleler  
+                    key={key} 
+                    item={item} 
+                    setSecilenKelime={setSecilenKelime}
+                    newIsim={newIsim} 
+                    newSil={newSil} 
+                    lastIsim={[lastIsim]}
+                  />
                 )}
               </List>
             </Grid.Column>
@@ -128,22 +59,10 @@ export default function Home() {
             <Grid.Column computer="6" mobile="16">
          
               <div style={{position: "fixed", minWidth: 400, top: 0, right: 0}}>
-                  
-                <AddForm kaydetBTN={kaydetBTN} 
-                  kelime={secilenKelime} 
-                  secilenKelime={secilenKelime} 
-                  setSecilenKelime={setSecilenKelimeFNC}
-                  regex={regex}
-                  setRegex={setRegexFNCX}
-                  action={action}
-                  setAction={setActionFNC}
-                  type={type}
-                  setType={setType}
-                  ekler={ekler}
-                  setEkler={setEkler}
-                  istisna={istisna}
-                  setIstisna={setIstisna}
-                  />
+                <AddForm 
+                  kelime={secilenKelime}
+                  addNewKelimeParent={addNewKelime} 
+                  denetle={denetle}/>
               </div>
           
             </Grid.Column>
