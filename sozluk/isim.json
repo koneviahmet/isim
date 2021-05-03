@@ -3,28 +3,84 @@
         "kelime": "gazete",
         "type": "cansiz",
         "regex": "G?g?azete(den|ler|lar|nin)",
-        "ekler":[],
-        "istisna":[]
+        "ekler": [],
+        "istisna": []
     },
     {
         "kelime": "gazeteci",
         "type": "cansiz",
         "regex": "G?g?azeteci(den|ler|lar|nin)",
-        "ekler":[],
-        "istisna":[]
-        
+        "ekler": [],
+        "istisna": []
     },
     {
         "isim": "makale",
         "type": "cansiz",
-        "ekler":[],
-        "istisna":[]
+        "ekler": [],
+        "istisna": []
     },
     {
         "kelime": "düşünce",
         "type": "cansiz",
-        "ekler":["düşünceyi", "düşüncede"],
-        "istisna":[]
+        "ekler": [
+            "düşünceyi",
+            "düşüncede"
+        ],
+        "istisna": []
+    },
+    {
+        "kelime": "farklı",
+        "type": "canli",
+        "regex": "^(F|f)?arklı(ler|lar)?(den|nin)?$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "da,",
+        "type": "canli",
+        "regex": "^(D|d)?a,(ler|lar)?(den|nin)?$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "farklı",
+        "type": "canli",
+        "regex": "^(F|f)?arklı(ler|lar)?(den|nin)?$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "da,",
+        "type": "canli",
+        "regex": "^(D|d)?a,(ler|lar)?(den|nin)?$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "almaktır",
+        "type": "canli",
+        "regex": "^(A|a)?lmaktır(ler|lar)?(den|nin)?$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
     }
 ]
-

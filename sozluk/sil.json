@@ -2,20 +2,74 @@
     {
         "kelime": "Bir",
         "regex": "B?b?ir(den|ler|lar|inin)?",
-        "ekler":[],
-        "istisna":[]
+        "ekler": [],
+        "istisna": []
     },
     {
         "kelime": "Selam",
         "regex": "S?s?elam",
-        "ekler":[],
-        "istisna":[]
+        "ekler": [],
+        "istisna": []
     },
     {
         "kelime": "Ben",
         "regex": "B?b?en(im|den|imle)?",
-        "ekler":[],
-        "istisna":[]
+        "ekler": [],
+        "istisna": []
+    },
+    {
+        "kelime": "yabancı",
+        "type": "canli",
+        "regex": "^(Y|y)?yabancı$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "dini,",
+        "type": "canli",
+        "regex": "^(D|d)?dini,$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "yabancı",
+        "type": "canli",
+        "regex": "^(Y|y)?yabancı$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "dini,",
+        "type": "canli",
+        "regex": "^(D|d)?dini,$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
+    },
+    {
+        "kelime": "eğitimi,",
+        "type": "canli",
+        "regex": "^(E|e)?eğitimi,$",
+        "ekler": [
+            ""
+        ],
+        "istisna": [
+            ""
+        ]
     }
 ]
-

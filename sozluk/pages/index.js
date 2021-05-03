@@ -5,6 +5,8 @@ import { Container, Grid, List, Button, Label, Form, Dropdown, Sticky, Segment} 
 import secilenCumler from '../secilenCumler.json'
 import Cumleler from '../components/cumleler'
 import AddForm from '../components/addForm'
+import isimList from '../isim.json'
+import axios from 'axios'
 
 
 export default function Home() {
@@ -12,7 +14,7 @@ export default function Home() {
   const [lastIsim, setLastIsim]           = useState({});
   const [newIsim, setNewIsim]             = useState([]);
   const [newSil, setNewSil]               = useState([]);
-  const [show, setShow]                   = useState("isim");
+  const [show, setShow]                   = useState("form");
   const [info, setInfo]                   = useState("");
 
   const addNewKelime = (arr, action) => {
@@ -62,6 +64,36 @@ export default function Home() {
     arr.istisna = istisna;
    
     setLastIsim({...arr})
+  }
+
+
+  const isimKaydet = () => {
+ 
+
+    axios.post('/api/addisim', {
+      arr: newIsim
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
+  }
+
+  const silKaydet = () => {
+    console.log(newSil);
+
+    axios.post('/api/addsil', {
+      arr: newSil
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   }
 
   return (
@@ -128,6 +160,8 @@ export default function Home() {
                     </li>
                   )}
                   </ul>
+
+                  <Button style={{marginTop: 25}} onClick={() => isimKaydet()}  color="red" fluid>Sözlüğe Kaydet</Button>
                </div>}
 
                {show == "sil" && <div style={{background: '#f1f1f1', padding: 10}}>
@@ -142,6 +176,8 @@ export default function Home() {
                     </li>
                   )}
                   </ul>
+
+                  <Button style={{marginTop: 25}} onClick={() => silKaydet()}  color="red" fluid>Silinenlere Kaydet</Button>
                </div>}
 
 
