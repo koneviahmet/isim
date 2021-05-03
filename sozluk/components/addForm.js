@@ -8,11 +8,12 @@ const AddForm = ({addNewKelimeParent, denetle, kelime}) => {
     const [lastIsim, setLastIsim]           = useState({});
     const [newIsim, setNewIsim]             = useState([]);
     const [newSil, setNewSil]               = useState([]);
-    const [ekler, setEkler]                 = useState("")
-    const [action, setAction]               = useState("ekle");
+    const [ekler, setEkler]                 = useState("");
     const [istisna, setIstisna]             = useState("");
+    const [action, setAction]               = useState("ekle");
     const [type, setType]                   = useState("canli");
-    
+
+
 
     useEffect(() => {
       kelime && setSecilenKelimeFNC(kelime);
@@ -63,8 +64,8 @@ const AddForm = ({addNewKelimeParent, denetle, kelime}) => {
       newLastIsimAdd.kelime   = kelime;
       newLastIsimAdd.type     = type;
       newLastIsimAdd.regex    = regex;
-      newLastIsimAdd.ekler    = ekler.split(",") || [];
-      newLastIsimAdd.istisna  = istisna.split(",") || [];
+      newLastIsimAdd.ekler    = ekler && ekler.split(",") || [];
+      newLastIsimAdd.istisna  = istisna && istisna.split(",") || [];
 
 
       if(secilenKelime.length > 2){
@@ -91,6 +92,10 @@ const AddForm = ({addNewKelimeParent, denetle, kelime}) => {
     } 
 
     const kaydetBTN = () => {
+      setSecilenKelime("");
+      setRegex("");
+      setEkler("");
+      setIstisna("");
       addNewKelime(secilenKelime, type, regex);
     }
 
@@ -141,7 +146,7 @@ const AddForm = ({addNewKelimeParent, denetle, kelime}) => {
             </Form.Field>
 
             <Form.Field>
-              <Button color="green" fluid onClick={() => denetle(lastIsim)}>Denetle</Button>
+              {lastIsim.kelime && secilenKelime && <Button color="green" fluid onClick={() => denetle(lastIsim, ekler, istisna)}>Denetle</Button>}
             </Form.Field>
           </Form>
 

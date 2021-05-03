@@ -9,11 +9,41 @@ const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
     let isFind = (arr, kelime) =>{
       let find = false;
       
-      try {
-        find = arr.find(
-          item => item.kelime == kelime 
-          || (item.regex && RegExp(item.regex, 'g').test(kelime))
+      /* 
+         let findIsim = isimArr.find(
+      
+            item => item.kelime == kelime 
+
+     
+            || item.ekler.find(ek => ek == kelime)
+            
+
+       
+            || 
+            (
+                (item.regex && RegExp(item.regex, 'g').test(kelime)) 
+                && !item.istisna.find(ek => ek == kelime)
+            )
         );
+      */
+
+      if(!arr || arr.length == 0 || !(arr[0] && arr[0].kelime))
+          return false; 
+      
+      try {
+      
+          find = arr && arr.find(
+            item => item.kelime == kelime 
+            || item.ekler.find(ek => ek == kelime)
+            || 
+            (    
+              item.regex && RegExp(item.regex, 'g').test(kelime)
+              && !item.istisna.find(ek => ek == kelime)
+            )
+          );
+      
+
+        
       } catch (error) {
         console.log("regex Hata");
       }
@@ -23,6 +53,7 @@ const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
     } 
 
     return (
+        
         <List.Item style={{padding: '10px'}}>
         <List.Content floated='left'>
           {item.cumle}

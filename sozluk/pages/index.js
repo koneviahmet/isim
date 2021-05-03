@@ -25,8 +25,14 @@ export default function Home() {
     setLastIsim({});
   }
 
-  const denetle = (arr) => {
-    setLastIsim(arr)
+  const denetle = (arr, ekler, istisna) => {
+    ekler   = ekler && ekler.split(",") || [];
+    istisna = istisna && istisna.split(",") || [];
+
+    arr.ekler = ekler;
+    arr.istisna = istisna;
+   
+    setLastIsim({...arr})
   }
 
   return (
