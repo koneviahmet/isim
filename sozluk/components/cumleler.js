@@ -56,7 +56,8 @@ const Cumleler = ({item, setSecilenKelime, newIsim, newSil, lastIsim}) => {
         
         <List.Item style={{padding: '10px'}}>
         <List.Content floated='left'>
-          {item.cumle}
+          <strong>{Math.ceil((item.kalanlar.length / item.kelimeler.length) * 100)}</strong>% | {item.cumle}
+          
 
           {item.secilenler.length > 0 && <div className={styles.kelimeList}>
           

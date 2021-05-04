@@ -6,6 +6,7 @@ import secilenCumler from '../secilenCumler.json'
 import Cumleler from '../components/cumleler'
 import AddForm from '../components/addForm'
 import isimList from '../isim.json'
+import silList from '../sil.json'
 import axios from 'axios'
 
 
@@ -17,12 +18,16 @@ export default function Home() {
   const [show, setShow]                   = useState("form");
   const [info, setInfo]                   = useState("");
 
+
+
   const addNewKelime = (arr, action) => {
 
       
       if(
         newIsim.filter(item => item.kelime == secilenKelime).length > 0 
         || newSil.filter(item => item.kelime == secilenKelime).length > 0
+        || isimList.filter(item => item.kelime == secilenKelime).length > 0
+        || silList.filter(item => item.kelime == secilenKelime).length > 0
         || secilenKelime == ""
         ){
           setInfo("Kelime daha önce eklendi.")
